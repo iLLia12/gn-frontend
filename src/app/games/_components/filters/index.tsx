@@ -1,108 +1,20 @@
 import Link from "next/link";
 
-const FiltersByYear = ({ params }: { params: string[] }) => {
-  const filters = [
-    {
-      name: "1970s",
-      slug: "1970s",
-    },
-    {
-      name: "1980s",
-      slug: "1980s",
-    },
-    {
-      name: "1990s",
-      slug: "1990s",
-    },
-    {
-      name: "2000s",
-      slug: "2000s",
-    },
-    {
-      name: "Platform game",
-      slug: "platform-game",
-    },
-    {
-      name: "RPG",
-      slug: "rpg",
-    },
-    {
-      name: "Fighting",
-      slug: "fighting",
-    },
-    {
-      name: "Adventure",
-      slug: "adventure",
-    },
-    {
-      name: "Sports",
-      slug: "sports",
-    },
-    {
-      name: "Action",
-      slug: "action",
-    },
-    {
-      name: "Sandbox",
-      slug: "sandbox",
-    },
-    {
-      name: "Stealth game",
-      slug: "stealth-game",
-    },
-    {
-      name: "Educational",
-      slug: "educational",
-    },
-    {
-      name: "Strategy",
-      slug: "strategy",
-    },
-    {
-      name: "Battle royale game",
-      slug: "battle-royale-game",
-    },
-    {
-      name: "MMORPG",
-      slug: "mmorpg",
-    },
-    {
-      name: "Tactical role-playing game",
-      slug: "tactical-role-playing-game",
-    },
-    {
-      name: "Massively Multiplayer Online Game (MMO)",
-      slug: "mmo",
-    },
-    {
-      name: "Survival",
-      slug: "survival",
-    },
-    {
-      name: "Racing",
-      slug: "racing",
-    },
-    {
-      name: "Puzzle",
-      slug: "puzzle",
-    },
-    {
-      name: "Simulation games",
-      slug: "simulation-games",
-    },
-    {
-      name: "Shooter",
-      slug: "shooter",
-    },
-    {
-      name: "Horror game",
-      slug: "horror-game",
-    },
-    {
-      name: "Multiplayer online battle arena (MOBA)",
-      slug: "moba",
-    },
-  ];
+interface Filter {
+  name: string;
+  slug: string;
+  category: string;
+}
+
+async function getData() {
+  "use server";
+  const res = await fetch(`http://localhost/api/filters`)
+  const filters: Filter[] = await res.json();
+  return { filters };
+}
+
+const FiltersByYear = async ({ params }: { params: string[] }) => {
+  const { filters } = await getData();
 
   function isFilterActive(slug: string): string {
     return params && params.includes(slug) ? "bg-amber-500" : " bg-stone-50";
