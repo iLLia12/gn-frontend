@@ -14,7 +14,7 @@ async function getData() {
 }
 
 const FiltersByYear = async ({ params }: { params: string[] }) => {
-  const { filters } = await getData();
+  const { filters } = await getData();``
 
   function isFilterActive(slug: string): string {
     return params && params.includes(slug) ? "bg-amber-500" : " bg-stone-50";

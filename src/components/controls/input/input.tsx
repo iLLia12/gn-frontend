@@ -3,7 +3,7 @@ import { useState } from "react";
 const Input = () => {
   const [value, setValue] = useState("");
 
-  function hadnleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
     setValue(e.target.value);
   }
 
@@ -22,7 +22,7 @@ const Input = () => {
         placeholder="John"
         required
         value={value}
-        onChange={hadnleOnChange}
+        onChange={handleOnChange}
       />
     </div>
   );
