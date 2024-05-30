@@ -50,7 +50,7 @@ const Header = () => {
           </div>
         </form>
         <div className="auth-block flex justify-end w-6/12">
-          <Link className="mr-2" href="/api/auth/signin">
+          <Link className="mr-2" href="http://localhost:3999/api/auth/signin">
             Next Auth
           </Link>
           <Link className="mr-2" href="/login">
