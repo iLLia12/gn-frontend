@@ -15,7 +15,7 @@ const Header = () => {
         </li>
       </ul>
       <div className="flex w-6/12">
-        <form className="py-2 w-9/12">
+        <form className="py-2 w-6/12">
           <label
             htmlFor="search"
             className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -49,8 +49,13 @@ const Header = () => {
             />
           </div>
         </form>
-        <div className="auth-block flex justify-end w-3/12">
-          <Link href="/login">Login</Link>
+        <div className="auth-block flex justify-end w-6/12">
+          <Link className="mr-2" href="/api/auth/signin">
+            Next Auth
+          </Link>
+          <Link className="mr-2" href="/login">
+            Login
+          </Link>
           <Link href="/register">Register</Link>
         </div>
       </div>

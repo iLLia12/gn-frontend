@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { gamesFactory } from "../../mock";
 import { Game } from "@/types";
-import GameThumbnailLink from "@/app/games/_components/game-thumbnail-link";
+import GameThumbnailLink from "@/app/(home)/games/_components/game-thumbnail-link";
 import ReactDOM from "react-dom/client";
 import Loader from "@/components/loader";
 
@@ -44,7 +44,7 @@ const LazyLoader = () => {
         rootMargin: "0px",
         threshold: 0,
         root: null,
-      }
+      },
     );
 
     if (lazyLoadingTrigger.current) {

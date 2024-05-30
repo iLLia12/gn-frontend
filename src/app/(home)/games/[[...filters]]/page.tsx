@@ -1,9 +1,9 @@
-import Filters from "@/app/games/_components/filters";
+import Filters from "@/app/(home)/games/_components/filters";
 import { Game as GameInterface } from "@/types";
 import type { Params } from "@/types";
 import dynamic from "next/dynamic";
 import { gamesMockData } from "../mock";
-import GameThumbnailLink from "@/app/games/_components/game-thumbnail-link";
+import GameThumbnailLink from "@/app/(home)/games/_components/game-thumbnail-link";
 import Loader from "@/components/loader";
 
 interface Game {
@@ -15,7 +15,9 @@ interface Game {
   image: string;
 }
 
-const LazyLoader = dynamic(() => import("@/app/games/_components/lazy-loader"));
+const LazyLoader = dynamic(
+  () => import("@/app/(home)/games/_components/lazy-loader"),
+);
 
 async function getData(params: Params) {
   "use server";

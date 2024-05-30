@@ -1,5 +1,5 @@
 import Link from "next/link";
-import GameThumbnail from "@/app/games/_components/game-thumbnail";
+import GameThumbnail from "@/app/(home)/games/_components/game-thumbnail";
 import { Game as GameInterface } from "@/types";
 
 const GameThumbnailLink = ({ game }: { game: GameInterface }) => {
