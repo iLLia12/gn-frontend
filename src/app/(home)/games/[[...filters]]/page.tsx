@@ -39,9 +39,9 @@ export default async function Home(params: Params) {
           id="gamesContainer"
           className="grid gap-4 grid-cols-4 grid-rows-auto"
         >
-          {games.map((game: GameInterface) => {
-            return <GameThumbnailLink game={game} />;
-          })}
+          {games.map((game: GameInterface) => (
+            <GameThumbnailLink key={game.slug} game={game} />
+          ))}
         </div>
         <LazyLoader />
       </div>
