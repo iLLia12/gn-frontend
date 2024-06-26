@@ -50,13 +50,15 @@ const Header = () => {
           </div>
         </form>
         <div className="auth-block flex justify-end w-6/12">
-          <Link className="mr-2" href="http://localhost:3999/api/auth/signin">
-            Next Auth
-          </Link>
-          <Link className="mr-2" href="/login">
+          <Link
+            className="mr-2"
+            href={`${process.env.NEXTAUTH_URL}/auth/signin`}
+          >
             Login
           </Link>
-          <Link href="/register">Register</Link>
+          <Link href={`${process.env.NEXTAUTH_URL}/auth/register`}>
+            Register
+          </Link>
         </div>
       </div>
     </header>

@@ -4,7 +4,6 @@ import type { Params } from "@/types";
 import dynamic from "next/dynamic";
 import { gamesMockData } from "../mock";
 import GameThumbnailLink from "@/app/(home)/games/_components/game-thumbnail-link";
-import Loader from "@/components/loader";
 
 interface Game {
   name: string;
@@ -16,7 +15,7 @@ interface Game {
 }
 
 const LazyLoader = dynamic(
-  () => import("@/app/(home)/games/_components/lazy-loader"),
+  () => import("@/app/(home)/games/_components/lazy-loader")
 );
 
 async function getData(params: Params) {
